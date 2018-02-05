@@ -71,14 +71,16 @@
 			var start = document.getElementById('sliceStart').value;
 			var end = document.getElementById('sliceEnd').value;
 
-			slicedSRT = txt.slice(start,end);
+			
+			if(start<0 || end > txt.length){
+				document.getElementById('sliceResult').innerHTML = 'Wrong values were set in input! Please check!';
 
-			document.getElementById('sliceResult').innerHTML = slicedSRT;
-
-
-
-
-
+			}
+			else {
+				slicedSRT = txt.slice(start,end);
+				document.getElementById('sliceResult').innerHTML = slicedSRT;
+			}
+			
 		}
 
 
