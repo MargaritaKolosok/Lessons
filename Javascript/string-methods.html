@@ -2,31 +2,63 @@
 <html>
 <body>
 
-<h2>JavaScript String Properties</h2>
+	<h2>JavaScript String Properties</h2>
+	<!-- Get value and send to the p tag -->
+	<p>The length property returns the length of a string:</p>
 
-<p>The length property returns the length of a string:</p>
+	<p id='txt'>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
 
-<p id="demo">Nothing</p>
-<button onclick="showItem()">Click!</button>
+	<p id="demo">Nothing</p>
+	<button onclick="showItem()">Click!</button>
+	<hr>
+	<!-- Get string and send to the p tag same in lowercase -->
+	<p id='toLowwerCase'></p>
+	<button onclick="toLowwerCase()">String to Lower case</button>
+	<hr>
 
-<script>
-var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	<!-- Search index of the letter that was set bu user in input -->
+	<input type="text" name="" id='searchIndex'>
+	<p id='index'></p>
+	<button onclick="findIndex()">Find index of the letter</button>
 
-function showItem(){
-var x=' ', i=0;
-for(i=0; i<=txt.length; i++) {
-if(i%2==0) {
-x+=txt.charAt(i);
-}
-}
+	<script>
+		function showItem(){
+			var txt = document.getElementById('txt').innerHTML;
+			var x = document.getElementById('demo');
+			x.innerHTML = txt;
+		}
+
+		function toLowwerCase(){
+			var txt = document.getElementById('txt').innerHTML;
+			var i =0, str = ' ', letter = '';
+
+			
+			var y = txt.toLowerCase();
+			document.getElementById('toLowwerCase').innerHTML = y;
+
+		}
+
+		function findIndex(){
+			var txt = document.getElementById('txt').innerHTML;
+			
+			var setIndex = document.getElementById('searchIndex').value;
+			setIndex = setIndex.toUpperCase();
+			
+			var index;
+			
+			index = txt.indexOf(setIndex);	
 
 
-return document.getElementById("demo").innerHTML = x;
-}
 
-// changes hkjfdhaskfjhdskjhsjhfkjsahdkskfdh
+			document.getElementById('index').innerHTML = index;
 
-</script>
+		}
+
+
+
+
+
+	</script>
 
 </body>
 </html>
