@@ -1,124 +1,195 @@
-<!DOCTYPE html>
-<html>
-<body>
+	<!DOCTYPE html>
+	<html>
+	<body>
 
-	<h2>JavaScript String Properties</h2>
-	<!-- Get value and send to the p tag -->
-	<p>The length property returns the length of a string:</p>
+		<h2>JavaScript String Properties</h2>
+		<!-- Get value and send to the p tag -->
+		<p>The length property returns the length of a string:</p>
 
-	<h1 id='txt'>ABCDEFGHIJKLMNOPQRSTUVWXYZ</h1>
+		<h1 id='txt'>ABCDEFGHIJKLMNOPQRSTUVWXYZ</h1>
 
-	<p id="demo">Nothing</p>
-	<button onclick="showItem()">Click!</button>
-	<hr>
-	<!-- Get string and send to the p tag same in lowercase -->
-	<p id='toLowwerCase'></p>
-	<button onclick="toLowwerCase()">String to Lower case</button>
-	<hr>
+		<p id="demo">Nothing</p>
+		<button onclick="showItem()">Click!</button>
+		<hr>
+		<!-- Get string and send to the p tag same in lowercase -->
+		<p id='toLowwerCase'></p>
+		<button onclick="toLowwerCase()">String to Lower case</button>
+		<hr>
 
-	<!-- Search index of the letter that was set bu user in input -->
-	<h2>indexOf()</h2>
-	<input type="text" name="" id='searchIndex'>
-	<p id='index'></p>
-	<button onclick="findIndex()">Find index of the letter</button>
+		<!-- Search index of the letter that was set bu user in input -->
+		<h2>indexOf()</h2>
+		<input type="text" name="" id='searchIndex'>
+		<p id='index'></p>
+		<button onclick="findIndex()">Find index of the letter</button>
 
-	<hr>
+		<hr>
 
-	<h2>The slice() Method</h2>
-	<input type="text" name="" id='sliceStart'>
-	<input type="text" name="" id='sliceEnd'>
-	<button onclick="sliceStr()">Slice string from start to end values</button>
-	<p>Result:</p>
-	<p id='sliceResult'></p>
+		<h2>The slice() Method</h2>
+		<input type="text" name="" id='sliceStart'>
+		<input type="text" name="" id='sliceEnd'>
+		<button onclick="sliceStr()">Slice string from start to end values</button>
+		<p>Result:</p>
+		<p id='sliceResult'></p>
 
-	<hr>
-	<h2>The replace() method</h2>
-	<p>Replaced text:</p>
-	<p id='replacedTextResult'></p>
-	<input type="text" name="" id='indexForReplace'>
-	<input type="text" name="" id='textForReplace'>
-	<button onclick="replaceText()">Replace text in the Alphabet with the text from input!</button>
+		<hr>
+		<h2>The replace() method</h2>
+		<p>Replaced text:</p>
+		<p id='replacedTextResult'></p>
+		<input type="text" name="" id='indexForReplace'>
+		<input type="text" name="" id='textForReplace'>
+		<button onclick="replaceText()">Replace text in the Alphabet with the text from input!</button>
 
-
-
-	<script>
-		function showItem(){
-			var txt = document.getElementById('txt').innerHTML;
-			var x = document.getElementById('demo');
-			x.innerHTML = txt;
-		}
-
-		function toLowwerCase(){
-			var txt = document.getElementById('txt').innerHTML;
-			var i =0, str = ' ', letter = '';
+		<hr>
+		<h2>charAt() Method</h2>
+		<p id='charAtResult'></p>
+		<input type="text" name="" id='charAtValue'>
+		<button onclick="getCharAt()">Get Char at Index</button>
 
 
-			var y = txt.toLowerCase();
-			document.getElementById('toLowwerCase').innerHTML = y;
-
-		}
-
-		function findIndex(){
-			var txt = document.getElementById('txt').innerHTML;
-
-			var setIndex = document.getElementById('searchIndex').value;
-			setIndex = setIndex.toUpperCase();
-
-			var index;
-
-			index = txt.indexOf(setIndex);	
+		<hr>
+		<h2>charCodeAt()</h2>
+		<p id='charCodeAtResult'></p>
+		<input type="text" name="" id='charCodeAtValue'>
+		<button onclick='getCharCode()'>Get Code of the letter</button>
 
 
 
-			document.getElementById('index').innerHTML = index;
-
-		}
-
-		function sliceStr(){
-			var slicedSRT;
-			var txt = document.getElementById('txt').innerHTML;
-			var start = document.getElementById('sliceStart').value;
-			var end = document.getElementById('sliceEnd').value;
-
-			
-			if(start<0 || end > txt.length){
-				document.getElementById('sliceResult').innerHTML = 'Wrong values were set in input! Please check!';
-
-			}
-			else {
-				slicedSRT = txt.slice(start,end);
-				document.getElementById('sliceResult').innerHTML = slicedSRT;
-			}
-			
-		}
-
-		function replaceText(){
-			var str = '';
-			var txt = document.getElementById('txt').innerHTML;
-			var textForReplace = document.getElementById('textForReplace').value;
-			var indexForReplace = document.getElementById('indexForReplace').value;
-
-			if(indexForReplace>0 && indexForReplace < txt.length){
-				str = txt.substr(indexForReplace);
-				replaceResult = txt.replace(str, textForReplace);
-
-				document.getElementById('replacedTextResult').innerHTML = replaceResult;
-			}
-			else {
-				document.getElementById('replacedTextResult').innerHTML = 'Index cannot be less than 0 and greater then txt length! Place check the input!';
+		<script>
+			function showItem(){
+				var txt = document.getElementById('txt').innerHTML;
+				var x = document.getElementById('demo');
+				x.innerHTML = txt;
 			}
 
-			
+				// New code section
+
+				function toLowwerCase(){
+					var txt = document.getElementById('txt').innerHTML;
+					var i =0, str = ' ', letter = '';
+
+
+					var y = txt.toLowerCase();
+					document.getElementById('toLowwerCase').innerHTML = y;
+
+				}
+
+				// New code section
+
+				function findIndex(){
+					var txt = document.getElementById('txt').innerHTML;
+
+					var setIndex = document.getElementById('searchIndex').value;
+					setIndex = setIndex.toUpperCase();
+
+					var index;
+
+					index = txt.indexOf(setIndex);	
 
 
 
-		}
+					document.getElementById('index').innerHTML = index;
+
+				}
+
+				// New code section
+
+				function sliceStr(){
+					var slicedSRT;
+					var txt = document.getElementById('txt').innerHTML;
+					var start = document.getElementById('sliceStart').value;
+					var end = document.getElementById('sliceEnd').value;
+
+
+					if(start<0 || end > txt.length){
+						document.getElementById('sliceResult').innerHTML = 'Wrong values were set in input! Please check!';
+
+					}
+					else {
+						slicedSRT = txt.slice(start,end);
+						document.getElementById('sliceResult').innerHTML = slicedSRT;
+					}
+
+				}
+
+				// New code section
+
+				function replaceText(){
+					var str = '';
+					var txt = document.getElementById('txt').innerHTML;
+					var textForReplace = document.getElementById('textForReplace').value;
+					var indexForReplace = document.getElementById('indexForReplace').value;
+
+					if(indexForReplace>0 && indexForReplace < txt.length){
+						str = txt.substr(indexForReplace);
+						replaceResult = txt.replace(str, textForReplace);
+
+						document.getElementById('replacedTextResult').innerHTML = replaceResult;
+					}
+					else {
+						document.getElementById('replacedTextResult').innerHTML = 'Index cannot be less than 0 and greater then txt length! Place check the input!';
+					}
+
+
+				}
+				// New code section
+
+				function getCharAt(){
+					var txt = document.getElementById('txt').innerHTML;
+					var charAtValue = document.getElementById('charAtValue').value;
+					var charIndexResult;
+
+					if(charAtValue > 0 && charAtValue < txt.length){
+						charIndexResult = txt.charAt(charAtValue);
+						document.getElementById('charAtResult').innerHTML = charIndexResult;
+
+					}
+					else {
+						document.getElementById('charAtResult').innerHTML = 'Index cannot be less than 0 and greater then txt length! Place check the input!';
+
+					}
+
+
+
+				}
+
+				// New code section
+
+				function getCharCode(){
+					var txt = document.getElementById('txt').innerHTML;
+
+					var charCodeAtResult, charCodeAtValue;
+					charCodeAtValue = document.getElementById('charCodeAtValue').value;
+
+					if(!wrongIndex(txt, charCodeAtValue)){
+						charCodeAtResult = txt.charCodeAt(charCodeAtValue);
+						document.getElementById('charCodeAtResult').innerHTML = charCodeAtResult;
+
+					}
+					else {
+						document.getElementById('charCodeAtResult').innerHTML = message;
+
+					}
+
+
+				}
+
+				function wrongIndex(txt, index){
+					
+					var length = txt.length;
+					if(index<0 || index > length) {
+						return true;
+					}
+					else {
+						message = 'Index cannot be less than 0 and greater then txt length! Place check the input!';
+					}
+					
+				}
 
 
 
 
 
-	</script>
+			</script>
 
-</body>
-</html>
+		</body>
+		</html>
