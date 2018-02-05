@@ -30,6 +30,14 @@
 	<p>Result:</p>
 	<p id='sliceResult'></p>
 
+	<hr>
+	<h2></h2>
+	<p>Replaced text:</p>
+	<p id='replacedTextResult'></p>
+	<input type="text" name="" id='indexForReplace'>
+	<input type="text" name="" id='textForReplace'>
+	<button onclick="replaceText()">Replace text in the Alphabet with the text from input!</button>
+
 
 
 	<script>
@@ -81,6 +89,28 @@
 				document.getElementById('sliceResult').innerHTML = slicedSRT;
 			}
 			
+		}
+
+		function replaceText(){
+			var str = '';
+			var txt = document.getElementById('txt').innerHTML;
+			var textForReplace = document.getElementById('textForReplace').value;
+			var indexForReplace = document.getElementById('indexForReplace').value;
+
+			if(indexForReplace>0 && indexForReplace < txt.length){
+				str = txt.substr(indexForReplace);
+				replaceResult = txt.replace(str, textForReplace);
+
+				document.getElementById('replacedTextResult').innerHTML = replaceResult;
+			}
+			else {
+				document.getElementById('replacedTextResult').innerHTML = 'Index cannot be less than 0 and greater then txt length! Place check the input!';
+			}
+
+			
+
+
+
 		}
 
 
