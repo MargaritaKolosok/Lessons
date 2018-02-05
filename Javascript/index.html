@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/app.js"></script>
+
+<body>
+
+	<p id='demo' onmouseover="changeMade()"></p>
+	<input type="text" name="" id='first' value="">
+	<input type="text" name="" id='second' value="">
+	<button onclick="myFunction()">Count me!</button>
+
+	<script>
+
+ var x, y, result;
+
+
+		function myFunction(){
+
+				 x = document.getElementById('first').value;
+				 y = document.getElementById('second').value;
+				 result = x*y;
+				
+				 document.getElementById('demo').innerHTML = result;
+				 
+		}
+
+		function changeMade(){
+			alert('changes made');
+		}
+
+
+
+		
+
+
+
+
+
+	</script>
+
+</body>
+</html>
+
