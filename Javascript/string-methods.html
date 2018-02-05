@@ -6,7 +6,7 @@
 	<!-- Get value and send to the p tag -->
 	<p>The length property returns the length of a string:</p>
 
-	<p id='txt'>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+	<h1 id='txt'>ABCDEFGHIJKLMNOPQRSTUVWXYZ</h1>
 
 	<p id="demo">Nothing</p>
 	<button onclick="showItem()">Click!</button>
@@ -21,6 +21,17 @@
 	<p id='index'></p>
 	<button onclick="findIndex()">Find index of the letter</button>
 
+	<hr>
+
+	<h2>The slice() Method</h2>
+	<input type="text" name="" id='sliceStart'>
+	<input type="text" name="" id='sliceEnd'>
+	<button onclick="sliceStr()">Slice string from start to end values</button>
+	<p>Result:</p>
+	<p id='sliceResult'></p>
+
+
+
 	<script>
 		function showItem(){
 			var txt = document.getElementById('txt').innerHTML;
@@ -32,7 +43,7 @@
 			var txt = document.getElementById('txt').innerHTML;
 			var i =0, str = ' ', letter = '';
 
-			
+
 			var y = txt.toLowerCase();
 			document.getElementById('toLowwerCase').innerHTML = y;
 
@@ -40,17 +51,33 @@
 
 		function findIndex(){
 			var txt = document.getElementById('txt').innerHTML;
-			
+
 			var setIndex = document.getElementById('searchIndex').value;
 			setIndex = setIndex.toUpperCase();
-			
+
 			var index;
-			
+
 			index = txt.indexOf(setIndex);	
 
 
 
 			document.getElementById('index').innerHTML = index;
+
+		}
+
+		function sliceStr(){
+			var slicedSRT;
+			var txt = document.getElementById('txt').innerHTML;
+			var start = document.getElementById('sliceStart').value;
+			var end = document.getElementById('sliceEnd').value;
+
+			slicedSRT = txt.slice(start,end);
+
+			document.getElementById('sliceResult').innerHTML = slicedSRT;
+
+
+
+
 
 		}
 
