@@ -3,7 +3,7 @@
 function getResult(){
 
 	
-	var congratulations = 'Congratulations! You gassed the number! Number was', lose = 'Sorry, try again! Number was';
+	var congratulations = 'Congratulations! You gassed one of the numbers! Number combination was', lose = 'Sorry, try again! Number was';
 
 	var userValues = [], result = [];
 	var txt = ' ', resultText = '';
