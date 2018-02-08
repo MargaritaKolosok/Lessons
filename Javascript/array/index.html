@@ -8,10 +8,20 @@
 
 <p id="demo"></p>
 
+<!-- -->
+
 <h2>Push</h2>
 <p id='push'></p>
 <input type="text" name="" id='pushValue'>
 <button onclick="push()">Push!</button>
+
+<!-- -->
+
+<h2>Array Methods</h2>
+<p id='toString'></p>
+<button onclick="convertToString()">To String!</button>
+
+<!-- Scripts -->
 
 <script>
 
@@ -36,6 +46,18 @@ function push(){
 
 	document.getElementById('push').innerHTML = fruits;
 }
+
+function convertToString(){
+
+//var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var isArray, newString;
+newString = fruits.toString();
+isArray = Array.isArray(newString);
+document.getElementById("toString").innerHTML = newString + ': is <b>' + isArray  + '</b> Array';
+
+}
+
+
 
 
 </script>
