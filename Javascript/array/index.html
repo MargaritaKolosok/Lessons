@@ -6,7 +6,7 @@
 
 <p>The best way to loop through an array is using a standard for loop:</p>
 
-<p id="demo"></p>
+<h1><p id="demo"></p></h1>
 
 <!-- -->
 
@@ -27,6 +27,13 @@
 <h2>join()</h2>
 <p id='join'></p>
 <button onclick="convertJoin()">convertJoin</button>
+
+<!-- -->
+
+<h2>shift() and unshift</h2>
+<p id='shift'></p>
+<button onclick="doShift()">Shift!</button>
+<button onclick="doUnshift()">Unshift!</button>
 
 <!-- Scripts -->
 
@@ -87,6 +94,20 @@ function convertJoin(){
 	fruits = fruits.join('+++');
 
 	document.getElementById("join").innerHTML  = fruits;
+
+}
+
+function doShift() {
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.shift();
+	document.getElementById("demo").innerHTML = fruits;
+
+}
+
+function doUnshift() {
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.unshift('Kiwi');
+	document.getElementById("demo").innerHTML = fruits;
 
 }
 
