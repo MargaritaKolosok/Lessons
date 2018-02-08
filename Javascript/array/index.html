@@ -14,12 +14,19 @@
 <p id='push'></p>
 <input type="text" name="" id='pushValue'>
 <button onclick="push()">Push!</button>
+<button onclick="pop()">Pop!</button>
 
 <!-- -->
 
 <h2>Array Methods</h2>
 <p id='toString'></p>
 <button onclick="convertToString()">To String!</button>
+
+<!-- -->
+
+<h2>join()</h2>
+<p id='join'></p>
+<button onclick="convertJoin()">convertJoin</button>
 
 <!-- Scripts -->
 
@@ -37,23 +44,49 @@ txt+='</ul>';
 
 document.getElementById('demo').innerHTML = txt;
 
+// push value into the array
+
 function push(){
 	var fruits = ["Banana", "Orange", "Apple", "Mango"];
 	var i, pushValue;
 
 	pushValue = document.getElementById('pushValue').value;
 	fruits.push(pushValue);
+	// one more variant
+	//fruits[fruits.length] = pushValue;
 
 	document.getElementById('push').innerHTML = fruits;
 }
 
+function pop(){
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	var x;
+		
+	x = fruits.pop();
+	
+	document.getElementById('push').innerHTML = fruits + '. Value <b>' + x + '  </b> was deleted from the Array';
+}
+
+
+// convert array to the string
+
 function convertToString(){
 
-//var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
 var isArray, newString;
 newString = fruits.toString();
 isArray = Array.isArray(newString);
 document.getElementById("toString").innerHTML = newString + ': is <b>' + isArray  + '</b> Array';
+
+}
+
+// convert array to the string but with specified separator
+
+function convertJoin(){
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits = fruits.join('+++');
+
+	document.getElementById("join").innerHTML  = fruits;
 
 }
 
