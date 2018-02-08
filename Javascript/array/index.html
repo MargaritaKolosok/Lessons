@@ -35,6 +35,14 @@
 <button onclick="doShift()">Shift!</button>
 <button onclick="doUnshift()">Unshift!</button>
 
+<!-- -->
+<h2>filter()</h2>
+<p>var ages = [32, 33, 16, 40];</p>
+<p id='filter'></p>
+<button onclick="doFilter()">Filter!</button>
+
+
+
 <!-- Scripts -->
 
 <script>
@@ -108,6 +116,20 @@ function doUnshift() {
 	var fruits = ["Banana", "Orange", "Apple", "Mango"];
 	fruits.unshift('Kiwi');
 	document.getElementById("demo").innerHTML = fruits;
+
+}
+
+function doFilter(){
+	var ages = [32, 33, 16, 40];
+
+	function checkAge(age){
+
+		return age >=18;
+
+	}
+
+	document.getElementById('filter').innerHTML = ages.filter(checkAge);
+
 
 }
 
