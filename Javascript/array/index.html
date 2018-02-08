@@ -8,8 +8,13 @@
 
 <p id="demo"></p>
 
+<h2>Push</h2>
+<p id='push'></p>
+<input type="text" name="" id='pushValue'>
+<button onclick="push()">Push!</button>
+
 <script>
-	
+
 var fruits, i , txt;
 fruits = ["Banana", "Orange", "Apple", "Mango"];
 txt = '<ul>';
@@ -21,6 +26,16 @@ for(i=0; i<fruits.length; i++){
 txt+='</ul>';
 
 document.getElementById('demo').innerHTML = txt;
+
+function push(){
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	var i, pushValue;
+
+	pushValue = document.getElementById('pushValue').value;
+	fruits.push(pushValue);
+
+	document.getElementById('push').innerHTML = fruits;
+}
 
 
 </script>
