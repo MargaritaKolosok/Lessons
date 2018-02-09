@@ -25,6 +25,11 @@ span.dot-prev {
 	padding: 50px;
 	border: 3px solid black;
 }
+.clear {
+	margin-top: 150px;
+	display: block;
+	clear: left;
+}
 
 
 
@@ -33,45 +38,80 @@ span.dot-prev {
 <body>
 	<div id='demo'></div>
 
+	<div class="clear"></div>
+	
+
+	<button onclick="moveRight()">Right</button>
+	<button onclick="moveLeft()">Left</button>
+
 	
 	<script>
 
-		window.onload = function(){
-			var demo = document.getElementById('demo');
-			var spanArray='';
-			for(var i=0; i<5; i++){
+		
 
-				spanArray+= '<span>' + i + '</span>';
-			}
-			demo.innerHTML = spanArray;
+		var demo = document.getElementById('demo');
+		var arrSpan = '';
+		var i=0;
+		
+
+		for(var j=0; j<5; j++){
+
+			arrSpan += '<span>' + j + '</span>';
 
 		}
 
-		var i=0;
+		demo.innerHTML = arrSpan;
 
-		var myTimer = setInterval(moveDot, 1000);
-		var arrSpan = demo.childNodes;
+		var node = document.getElementById('demo').childNodes;
+		var startPos = node[0].classList.add('dot');
 
-		function moveDot(){
-			if(i!=arrSpan.length){
+		
+		function moveRight(){
+			if(i==node.length-1){
+				node[i].classList.remove('dot');
 
-				arrSpan[i].classList.toggle('dot');
-
-				console.log(i + 'if');
+				i=0;
+				node[i].classList.add('dot');
 				
+			}
+			else {
+
 				i++;
+				
+				node[i].classList.add('dot');
+				node[i-1].classList.remove('dot');
+			} 
+
+			
+		}
+
+		function moveLeft(){
+			if(i==0){
+				
+				node[i].classList.remove('dot');
+				i=node.length -1;
+				node[i].classList.add('dot');
 
 			}
 			else {
-				i=0;
-				console.log(i + 'else');
-			} 
+				node[i].classList.remove('dot');
+				i--;
+				node[i].classList.add('dot');
+				
+				console.log('ELSE' + i);
 
-
+			}
 			
-
 		}
+
+
 		
+
+
+		
+
+		
+
 	</script>
 
 </body>

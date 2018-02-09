@@ -1,24 +1,40 @@
 // app.js
 /*
-window.onload = function(){
-		var spanArray = '';
-		for(var i=0; i<5; i++){
 
-		spanArray+= '<span>' + i + '</span>';
+// Dot moving Interval
+
+window.onload = function(){
+			var demo = document.getElementById('demo');
+			var spanArray='';
+			for(var i=0; i<5; i++){
+
+				spanArray+= '<span>' + i + '</span>';
+			}
+			demo.innerHTML = spanArray;
 
 		}
-		document.getElementById('demo').innerHTML = spanArray;
-	}
 
-var myVar = setInterval(myTimer, 1000);
-var i=0;
-var arr = document.getElementById('demo').childNodes;
+		var i=0;
 
-function myTimer() {
-	
-	arr[i].classList.add('dot');
-	i++;
-	   
+		var myTimer = setInterval(moveDot, 1000);
+		var arrSpan = demo.childNodes;
 
-}
+		function moveDot(){
+			if(i!=arrSpan.length){
+
+				arrSpan[i].classList.toggle('dot');
+
+				console.log(i + 'if');
+
+				i++;
+
+			}
+			else {
+				i=0;
+				console.log(i + 'else');
+			} 
+
+		}
+
+
 */
