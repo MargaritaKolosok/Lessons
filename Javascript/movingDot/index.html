@@ -3,7 +3,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="js/index.js"></script>
 <style>
-#demo span {
+span {
 	margin-top: 50px;
 	background: lightblue;
 	padding: 50px;
@@ -11,7 +11,22 @@
 
 }
 
-	
+span.dot {
+	margin-top: 50px;
+	background: black;
+	padding: 50px;
+	border: 3px solid black;
+
+}
+
+span.dot-prev {
+	margin-top: 50px;
+	background: lightblue;
+	padding: 50px;
+	border: 3px solid black;
+}
+
+
 
 </style>
 
@@ -19,24 +34,45 @@
 	<div id='demo'></div>
 
 	
-<script>
-	window.onload = function(){
-		var spanArray = '';
-		for(var i=0; i<5; i++){
+	<script>
 
-		spanArray+= '<span>' + i + '</span>';
+		window.onload = function(){
+			var demo = document.getElementById('demo');
+			var spanArray='';
+			for(var i=0; i<5; i++){
+
+				spanArray+= '<span>' + i + '</span>';
+			}
+			demo.innerHTML = spanArray;
 
 		}
-		document.getElementById('demo').innerHTML = spanArray;
-	}
 
-	var myTimer = setInterval('moveDot', 1000);
-	
-	function moveDot() {
+		var i=0;
 
-	}
-	
-</script>
+		var myTimer = setInterval(moveDot, 1000);
+		var arrSpan = demo.childNodes;
+
+		function moveDot(){
+			if(i!=arrSpan.length){
+
+				arrSpan[i].classList.toggle('dot');
+
+				console.log(i + 'if');
+				
+				i++;
+
+			}
+			else {
+				i=0;
+				console.log(i + 'else');
+			} 
+
+
+			
+
+		}
+		
+	</script>
 
 </body>
 </html>
