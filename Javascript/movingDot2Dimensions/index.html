@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/index.js"></script>
+<style>
+
+div.column {
+
+	display: inline-block;
+	
+}
+
+div.row {
+
+	width:50px;
+	height: 50px;
+	background: red;
+	border: 1px solid green;
+	display: block;
+	
+
+}
+
+
+
+</style>
+
+<!--
+
+	1 function generates rows
+	2 function in 1st function generates divs inside row
+
+	each div becomes coordinates
+
+
+
+	-->
+
+<body>
+<div id="demo"></div>
+
+<button onclick='fieldGenarator()'>Click!</button>
+
+	
+	<script type="text/javascript">
+		function fieldGenarator(){
+			var i=3, j=3;
+			var text = ';'
+			var divArr = [];
+
+			var parent = document.getElementById('demo');
+
+			for(i=0; i<3; i++){
+				
+				parent.appendChild(document.createElement('div'));
+				var col = parent.lastChild;
+				console.log(col);
+
+				col.classList.add('column');
+
+
+				for(j=0; j<3; j++){
+				
+					var lastDiv = parent.lastChild;
+					var row = lastDiv.appendChild(document.createElement('div'));
+					row.classList.add('row');
+					var x = lastDiv.lastChild;
+
+					//console.log(x);
+					
+					
+					//divArr[0][0] = x;
+					//console.log(i + ' ' +j + 'Array' + divArr[i][j]);
+					//console.log('i = ' +i + 'j=' +j + 'row=' + divArr[0][0] );
+					
+				}
+			//	divArr[i][j] = row;
+			//console.log('Div elem i and j is' + i + ' ' + j + ' ' + divArr[i][j]);
+
+
+
+			}
+
+
+
+
+		}
+		
+
+	</script>
+
+	
+
+</body>
+</html>
+
