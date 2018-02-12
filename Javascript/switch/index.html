@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'></div>
+
+	
+
+<!-- Scripts -->
+<script>
+
+	var demo = document.getElementById('demo');
+	var x = new Date().getDay();
+
+	switch(x){
+		case 0:
+		day = 'Sunday';
+		break;
+
+		  case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+
+    case 6:
+        day = "Saturday";
+
+	}
+
+	demo.innerHTML = 'Today is ' + day;
+
+	
+</script>
+
+
+</body>
+</html>
+
