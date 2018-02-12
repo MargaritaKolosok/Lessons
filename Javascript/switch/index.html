@@ -12,6 +12,10 @@
 
 <div id='demo'></div>
 
+<hr>
+
+<div id='forInLoop'></div>
+
 	
 
 <!-- Scripts -->
@@ -47,6 +51,23 @@
 	}
 
 	demo.innerHTML = 'Today is ' + day;
+
+
+	//
+
+	var forInLoop = document.getElementById('forInLoop');
+
+	var arr = ['Saturday', 'Sunday', 'Monday', 'Thursday', 'Wednesday', 'Tuesday', 'Friday'];
+	var x; var txt = '';
+
+	for(x in arr) {
+		txt+= arr[x] + ' ';
+
+	}
+
+	forInLoop.innerHTML = txt;
+
+
 
 	
 </script>
