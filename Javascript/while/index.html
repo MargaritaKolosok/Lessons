@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DOM-->
+
+<div id='demo'></div>
+
+<hr>
+
+<div id='demo1'></div>
+
+<hr>
+
+<div id='demo2'></div>
+
+<hr>
+
+<div id='demo3'></div>
+
+
+<!-- Scripts -->
+<script>
+
+
+    // while
+
+    var demo = document.getElementById('demo');
+
+    var cars = ["BMW", "Volvo", "Saab", "Ford"];
+    var i = 0;
+    var text = "";
+
+    while (cars[i]) {
+        text += cars[i] + "<br>";
+        i++;
+    }
+
+
+    demo.innerHTML = text;
+
+
+    // do while
+
+    var demo1 = document.getElementById('demo1');
+    var txt1 = '';
+    var j = 0;
+
+    do {
+
+        txt1 += cars[j] + '<br>';
+        j++;
+
+
+    }
+    while (j < 3);
+
+    demo1.innerHTML = txt1;
+
+    // while
+
+    var cars2 = ["BMW", "Volvo", "Saab", "Ford", "BMW", "Volvo", "Saab", "Ford", "BMW", "Volvo", "Saab", "Ford"];
+
+    var demo2 = document.getElementById('demo2');
+    var x = 0;
+    var txt2 = '';
+
+    while (x < 10) {
+        txt2 += cars2[x] + ' ';
+        x++;
+    }
+    demo2.innerHTML = txt2;
+
+
+    // break statement
+
+    var demo3 = document.getElementById('demo3');
+
+    var y = 0;
+    var txt3 = ' ';
+
+    for (y = 0; y < 10; y++) {
+        txt3 += y + 'Number <br> ';
+        if (y === 5) {
+            break;
+        }
+    }
+    demo3.innerHTML = txt3;
+
+
+</script>
+
+
+</body>
+</html>
+
