@@ -24,6 +24,10 @@
 
 <div id='demo3'></div>
 
+<hr>
+
+<div id='demo4'></div>
+
 
 <!-- Scripts -->
 <script>
@@ -92,6 +96,22 @@
         }
     }
     demo3.innerHTML = txt3;
+
+    // continue
+
+    var demo4 = document.getElementById('demo4');
+
+    var a = 0;
+    var txt4 = ' ';
+
+    for (a = 0; a < 10; a++) {
+        if (a === 5) {
+            continue;
+        }
+        txt4 += a + 'Number <br>';
+    }
+
+    demo4.innerHTML = txt4;
 
 
 </script>
