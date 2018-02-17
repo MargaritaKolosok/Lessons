@@ -67,6 +67,9 @@
             message.innerHTML = 'Input is ' + err;
 
         }
+        finally {
+            document.getElementById('numberInput').value = '';
+        }
 
     }
 
