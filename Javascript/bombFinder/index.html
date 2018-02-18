@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+
+    span {
+        width: 20px;
+        height: 20px;
+        border: 1px solid green;
+        display: inline-block;
+        background: grey;
+    }
+
+    .bomb {
+        width: 20px;
+        height: 20px;
+        background: red;
+    }
+
+    .notBomb {
+        width: 20px;
+        height: 20px;
+        background: green;
+    }
+
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'></div>
+
+<button id="test">Test Button</button>
+
+
+<!-- Scripts -->
+<script>
+
+    var demo = document.getElementById('demo');
+    var span;
+    var bombArr = [];
+
+    // create 10 spans inside div
+
+
+    for (var i = 0; i < 10; i++) {
+
+        span = document.createElement('span');
+        demo.appendChild(span);
+
+    }
+
+    // get all child span nodes into the array arr
+
+    var arr = demo.childNodes;
+
+    // add click event for each span element
+
+    for (var i = 0; i < 10; i++) {
+        arr[i].addEventListener('click', checkBomb);
+
+    }
+
+    // create 3 random bombs, remove general not bomb event from this bombs, and add personsl event for bombs
+
+    for (var i = 0; i < 3; i++) {
+
+        var bomb = Math.floor(Math.random() * 10);
+        bombArr[bomb] = arr[bomb];
+
+        bombArr[bomb].removeEventListener('click', checkBomb)
+
+        bombArr[bomb].addEventListener('click', bombAlert);
+
+    }
+
+    function checkBomb() {
+
+        this.classList.add('notBomb');
+
+    }
+
+    function bombAlert() {
+        this.classList.add('bomb');
+
+
+    }
+
+
+</script>
+
+
+</body>
+</html>
+
