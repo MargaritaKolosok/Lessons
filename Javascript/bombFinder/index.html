@@ -4,43 +4,44 @@
 <!-- Styles -->
 <style type="text/css">
 
-    span {
-        width: 20px;
-        height: 20px;
-        border: 1px solid green;
-        display: inline-block;
-        background: grey;
-    }
+span {
+    width: 20px;
+    height: 20px;
+    border: 1px solid green;
+    display: inline-block;
+    background: grey;
+}
 
-    .bomb {
-        width: 20px;
-        height: 20px;
-        background: red;
-    }
+.bomb {
+    width: 20px;
+    height: 20px;
+    background: red;
+}
 
-    .notBomb {
-        width: 20px;
-        height: 20px;
-        background: green;
-    }
+.notBomb {
+    width: 20px;
+    height: 20px;
+    background: green;
+}
 
 </style>
 
 <script src="js/index.js"></script>
 <body>
-<!-- HTML DON-->
+    <!-- HTML DON-->
 
-<div id='demo'></div>
+    <div id='demo'></div>
 
-<button id="test">Test Button</button>
+    <h1 id='gameResult'></h1>
 
 
-<!-- Scripts -->
-<script>
+    <!-- Scripts -->
+    <script>
 
-    var demo = document.getElementById('demo');
-    var span;
-    var bombArr = [];
+        var demo = document.getElementById('demo');
+      
+        var span;
+        var bombArr = [];
 
     // create 10 spans inside div
 
@@ -79,14 +80,42 @@
     function checkBomb() {
 
         this.classList.add('notBomb');
+      
+ }
+
+ function bombAlert() {
+    this.classList.add('bomb');
+
+
+    showAllBombs();
+
+}
+
+
+function showAllBombs(){
+
+
+
+    for(var y=0; y<10; y++){
+
+        if(bombArr[y]==undefined){
+
+            arr[y].classList.add('notBomb');
+
+        } else {
+             arr[y].classList.add('bomb');
+
+        }
+
+       
 
     }
 
-    function bombAlert() {
-        this.classList.add('bomb');
+}
 
 
-    }
+
+
 
 
 </script>
