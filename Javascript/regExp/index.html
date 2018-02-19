@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'>Please visit Microsoft and Microsoft!</div>
+
+<hr>
+
+<p id="err"></p>
+
+<hr>
+
+<input type="text" id="numberInput">
+<button onclick="checkNumber()">Try it!</button>
+<p id="message"></p>
+
+
+<!-- Errors -->
+
+
+<!-- Scripts -->
+<script>
+
+    var str = document.getElementById('demo').innerHTML;
+    var txt = str.replace(/microsoft/gi, 'Apple');
+    document.getElementById('demo').innerHTML = txt;
+
+
+    // Errors
+
+    try{
+
+        myFunction();
+
+    }
+    catch (err){
+        document.getElementById('err').innerHTML = err.message;
+
+
+    }
+
+    // Check Number function
+
+    function checkNumber() {
+        var message = document.getElementById('message');
+        message.innerHTML = '';
+        var num = document.getElementById('numberInput').value;
+
+        try{
+            if(num=='') throw 'empty';
+            if(isNaN(num)) throw 'Not a number';
+
+          //  var x = Number(num);
+            if(num<5) throw 'too low';
+            if(num>10) throw 'too big';
+
+        }
+        catch (err){
+            message.innerHTML = 'Input is ' + err;
+
+        }
+        finally {
+            document.getElementById('numberInput').value = '';
+        }
+
+    }
+
+
+</script>
+
+
+</body>
+</html>
+

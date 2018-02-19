@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+<h1 id='info'></h1>
+
+<div id='demo'></div>
+
+<hr>
+
+<form name="myForm" onsubmit="return validateForm()">
+    Name: <input type="text" name="fname">
+    <input type="submit" value="Submit">
+</form>
+
+<hr>
+
+<input type="text" id="inputVal">
+<button onclick="checkInputValue()">Validate Input</button>
+
+	
+
+<!-- Scripts -->
+<script>
+
+    var text = '{ "employers" : [' +
+        '{ "firstName":"John" , "lastName":"Doe" },' +
+        '{ "firstName":"Anna" , "lastName":"Smith" },' +
+        '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+    var obj = JSON.parse(text);
+
+    document.getElementById('demo').innerHTML = obj.employers[1].firstName + ' ' + obj.employers[1].lastName;
+    
+    
+    // Form
+    
+    function validateForm() {
+
+        var inputValue = document.forms['myForm']['fname'].value;
+        if(inputValue == ''){
+            alert('Input should not be empty!');
+
+        }
+        
+    }
+
+    // Check input value
+
+
+    function checkInputValue() {
+        var text = '';
+
+        var info = document.getElementById('info');
+
+        var val = document.getElementById('inputVal').value;
+        if (!(isNaN(val) || val < 1 || val > 10)) {
+
+            text = 'Input is valid';
+
+        } else {
+            text = 'Value is not valid! Try another one!';
+        }
+        info.innerHTML = text;
+
+    }
+
+
+
+
+	
+</script>
+
+
+</body>
+</html>
+
