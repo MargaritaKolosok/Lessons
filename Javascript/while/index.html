@@ -111,7 +111,15 @@
         txt4 += a + 'Number <br>';
     }
 
-    demo4.innerHTML = txt4;
+
+    var cons = (cars2.constructor).toString();
+    if(cons.includes('Array')){
+
+        var consCon = 'It was an array!';
+
+    }
+    demo4.innerHTML = txt4 + ' ' + consCon;
+
 
 
 </script>

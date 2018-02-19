@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'></div>
+
+	
+
+<!-- Scripts -->
+<script>
+
+	function Person(firstName, lastName, age, location){
+
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.location = location;
+
+	}
+
+	var mom = new Person('Sasha', 'Kolosok', 53, 'Kiev');
+
+	var txt = '';
+
+	for(i in mom){
+
+		txt+= mom[i] + ' ';
+
+	}
+
+	document.getElementById('demo').innerHTML = txt;
+	
+</script>
+
+
+</body>
+</html>
+
