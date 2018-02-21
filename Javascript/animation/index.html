@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+
+    #container {
+
+        width: 500px;
+        height: 500px;
+        background: yellow;
+        position: relative;
+
+    }
+    #box {
+        width: 50px;
+        height: 50px;
+        background: red;
+        position: absolute;
+    }
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='container'>
+    <div id="box"></div>
+</div>
+
+<button onclick="myMove()">Move this dot!</button>
+
+	
+
+<!-- Scripts -->
+<script>
+
+    function myMove() {
+
+        var container = document.getElementById('container');
+        var box = document.getElementById('box');
+       // var pos = 0;
+        var topVal = 0, leftVal = 0; var max = 450;
+
+        var movement = setInterval(frame, 5);
+
+        function frame() {
+            if(topVal!=max && leftVal!=max){
+                topVal++;
+                leftVal++;
+                box.style.top = topVal + 'px';
+                box.style.left = leftVal + 'px';
+
+            } else {
+                leftVal--;
+                box.style.top = topVal + 'px';
+                box.style.left = leftVal + 'px';
+
+            }
+            if(leftVal==0 && topVal!=0){
+                topVal--;
+                box.style.top = topVal + 'px';
+                box.style.left = leftVal + 'px';
+
+            }   else if(topVal==0 && leftVal!=max){
+                leftVal++;
+                box.style.top = topVal + 'px';
+                box.style.left = leftVal + 'px';
+
+            }
+         else if(leftVal==max && topVal!=max){
+                topVal++;
+                box.style.top = topVal + 'px';
+                box.style.left = leftVal + 'px';
+
+            }
+        }
+
+
+    }
+
+
+
+
+
+	
+</script>
+
+
+</body>
+</html>
+
