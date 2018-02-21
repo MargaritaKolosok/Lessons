@@ -16,6 +16,10 @@
 
 <div id="demo1"></div>
 
+<hr>
+
+<div id="demo2"></div>
+
 	
 
 <!-- Scripts -->
@@ -54,6 +58,25 @@
        return max;
 
    }
+
+
+// call()
+var demo2 = document.getElementById('demo2');
+
+var person = {
+  firstName: 'Marry',
+  lastName: 'Smith',
+  fullName : function(){
+    return this.firstName + ' ' + this.lastName;
+  }
+}
+
+var Harry = {
+   firstName: 'Harry',
+  lastName: 'Potter'
+}
+
+demo2.innerHTML = person.fullName.call(Harry);
 
 
 
