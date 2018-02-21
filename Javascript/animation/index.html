@@ -46,35 +46,33 @@
         var movement = setInterval(frame, 5);
 
         function frame() {
-            if(topVal!=max && leftVal!=max){
-                topVal++;
+
+            if(topVal==0 && leftVal!=max){
+
                 leftVal++;
+
                 box.style.top = topVal + 'px';
                 box.style.left = leftVal + 'px';
 
-            } else {
+            } else if(leftVal==max && topVal!=max){
+                topVal++;
+                box.style.top = topVal + 'px';
+                box.style.left = leftVal + 'px';
+
+            } else if(topVal==max && leftVal!=0){
                 leftVal--;
                 box.style.top = topVal + 'px';
                 box.style.left = leftVal + 'px';
 
-            }
-            if(leftVal==0 && topVal!=0){
+
+            } else if(leftVal==0 && topVal!=0){
                 topVal--;
                 box.style.top = topVal + 'px';
                 box.style.left = leftVal + 'px';
-
-            }   else if(topVal==0 && leftVal!=max){
-                leftVal++;
-                box.style.top = topVal + 'px';
-                box.style.left = leftVal + 'px';
-
             }
-         else if(leftVal==max && topVal!=max){
-                topVal++;
-                box.style.top = topVal + 'px';
-                box.style.left = leftVal + 'px';
 
-            }
+
+
         }
 
 
