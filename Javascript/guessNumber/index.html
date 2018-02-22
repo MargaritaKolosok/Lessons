@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+<input type="text" id="num">
+<button onclick="checkNumber()">Check number</button>
+<div id='demo'></div>
+
+	
+
+<!-- Scripts -->
+<script>
+    window.onload = function () {
+
+        randomArr = [];
+        for(var i=0; i<4; i++){
+
+            randomArr[i] = Math.floor(Math.random() *10);
+
+
+        }
+
+    }
+
+    var result = [];
+    var demo = document.getElementById('demo');
+    var numArr = [];
+
+    function checkNumber() {
+        var num = document.getElementById('num').value;
+
+        if(isNaN(num)){
+            demo.innerHTML = 'Not a number value! Try again!';
+                    }
+        else if(!isNaN(num) && num.length<4){
+            demo.innerHTML = 'Number should have 4 digits';
+        }
+        else if(!isNaN(num) && num.length==4){
+
+            for(x in num){
+              numArr[x] = num.charAt(x);
+             // console.log(x + ' ' + numArr[x]);
+            }
+
+            demo.innerHTML = comparison(numArr) + ' ' + randomArr.toString();
+
+
+        }
+
+    }
+
+    function comparison(numArr) {
+
+        for(x in numArr){
+
+            if(numArr[x]==randomArr[x]){
+
+                result[x] = 'X';
+
+            } else {
+                result[x] = '0';
+            }
+
+        }
+
+        return result;
+
+    }
+
+
+	
+</script>
+
+
+</body>
+</html>
+
