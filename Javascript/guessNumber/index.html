@@ -17,6 +17,7 @@
 
 <!-- Scripts -->
 <script>
+
     window.onload = function () {
 
         randomArr = [];
@@ -30,6 +31,7 @@
     }
 
     var result = [];
+    side = 'side';
     var demo = document.getElementById('demo');
     var numArr = [];
 
@@ -49,30 +51,48 @@
              // console.log(x + ' ' + numArr[x]);
             }
 
-            demo.innerHTML = comparison(numArr) + ' ' + randomArr.toString();
+            demo.innerHTML = comparison(numArr) + '<br> ' + randomArr.toString();
 
 
         }
 
     }
+
+
 
     function comparison(numArr) {
 
         for(x in numArr){
 
+
+
+
             if(numArr[x]==randomArr[x]){
 
                 result[x] = 'X';
 
-            } else {
+            }
+
+            else {
+
                 result[x] = '0';
             }
 
+
         }
+
+
+
 
         return result;
 
-    }
+
+
+        }
+
+
+
+
 
 
 	
