@@ -48,11 +48,19 @@
 			else if (!isNaN(num) && num.length == 4) {
 
 				for (x in num) {
+
 					numArr[x] = num.charAt(x);
-                // console.log(x + ' ' + numArr[x]);
+                
             }
 
-            demo.innerHTML = comparison(numArr) + '<br>' + '<b>' + randomArr.toString() + '</b>';
+            var element = document.createElement('p');
+            element.innerHTML = comparison(numArr);
+
+            demo.appendChild(element);
+
+            //console.log(randomArr.toString());
+
+           // demo.innerHTML = comparison(numArr) + '<br>' + '<b>' + randomArr.toString() + '</b>';
 
 
         }
