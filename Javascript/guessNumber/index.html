@@ -29,6 +29,8 @@
 
 		}
 
+		
+
 		var result = [];
 		side = 'side';
 		var demo = document.getElementById('demo');
@@ -93,16 +95,15 @@
 
     		}
 
-    		if (x != numArr.length-1 && x != 0) {
+    		if (x < numArr.length-1 && x > 0) {
     			var y = x;
-    			console.log('x='+x);
     			
+    			//console.log(numArr[y-1] + ' ' + numArr[y]  + ' ' + numArr[Number(y)+1]);
+    			 			
 
-    			if (numArr[y] == randomArr[y-1] || numArr[y] == randomArr[y+1]) {
-                    //console.log('comparison y+1=' + randomArr[y+1] + ' comparison y-1= ' + randomArr[y-1])
-                    // bug here
-
-                    result[y] = 'V';
+    			if (numArr[y] == randomArr[y-1] || numArr[y] == randomArr[Number(y)+1]) {
+                   
+                    result[x] = 'V';
 
                 } 
                
