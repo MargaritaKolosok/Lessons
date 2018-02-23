@@ -54,11 +54,12 @@
             }
 
             var element = document.createElement('p');
+
             element.innerHTML = comparison(numArr);
 
             demo.appendChild(element);
 
-            //console.log(randomArr.toString());
+            console.log(randomArr.toString());
 
            // demo.innerHTML = comparison(numArr) + '<br>' + '<b>' + randomArr.toString() + '</b>';
 
@@ -109,7 +110,7 @@
     			//console.log(numArr[y-1] + ' ' + numArr[y]  + ' ' + numArr[Number(y)+1]);
     			 			
 
-    			if (numArr[y] == randomArr[y-1] || numArr[y] == randomArr[Number(y)+1]) {
+    			if (numArr[y] == randomArr[y-1] || numArr[y] == randomArr[Number(y)+1] && numArr[y] != numArr[y-1] && numArr[y] != numArr[Number(y)+1] ) {
                    
                     result[x] = 'V';
 
