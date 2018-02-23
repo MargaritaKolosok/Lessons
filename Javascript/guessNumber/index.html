@@ -8,45 +8,45 @@
 
 <script src="js/index.js"></script>
 <body>
-<!-- HTML DON-->
-<input type="text" id="num">
-<button onclick="checkNumber()">Check number</button>
-<div id='demo'></div>
+	<!-- HTML DON-->
+	<input type="text" id="num">
+	<button onclick="checkNumber()">Check number</button>
+	<div id='demo'></div>
 
 
-<!-- Scripts -->
-<script>
+	<!-- Scripts -->
+	<script>
 
-    window.onload = function () {
+		window.onload = function () {
 
-        randomArr = [];
-        for (var i = 0; i < 4; i++) {
+			randomArr = [];
+			for (var i = 0; i < 4; i++) {
 
-            randomArr[i] = Math.floor(Math.random() * 10);
+				randomArr[i] = Math.floor(Math.random() * 10);
 
 
-        }
+			}
 
-    }
+		}
 
-    var result = [];
-    side = 'side';
-    var demo = document.getElementById('demo');
-    var numArr = [];
+		var result = [];
+		side = 'side';
+		var demo = document.getElementById('demo');
+		var numArr = [];
 
-    function checkNumber() {
-        var num = document.getElementById('num').value;
+		function checkNumber() {
+			var num = document.getElementById('num').value;
 
-        if (isNaN(num)) {
-            demo.innerHTML = 'Not a number value! Try again!';
-        }
-        else if (!isNaN(num) && num.length < 4 || num.length > 4) {
-            demo.innerHTML = 'Number should have 4 digits';
-        }
-        else if (!isNaN(num) && num.length == 4) {
+			if (isNaN(num)) {
+				demo.innerHTML = 'Not a number value! Try again!';
+			}
+			else if (!isNaN(num) && num.length < 4 || num.length > 4) {
+				demo.innerHTML = 'Number should have 4 digits';
+			}
+			else if (!isNaN(num) && num.length == 4) {
 
-            for (x in num) {
-                numArr[x] = num.charAt(x);
+				for (x in num) {
+					numArr[x] = num.charAt(x);
                 // console.log(x + ' ' + numArr[x]);
             }
 
@@ -60,49 +60,54 @@
 
     function comparison(numArr) {
 
-        for (x in numArr) {
+    	for (x in numArr) {
 
 
-            if (numArr[x] == randomArr[x]) {
+    		if (numArr[x] == randomArr[x]) {
 
-                result[x] = 'X';
+    			result[x] = 'X';
 
-            } else {
-                result[x] = '0';
-            }
+    		} 
+    		else {
+    			result[x] = '0';
+    		}
 
-            if (x == 0) {
-                var y = 0;
+    		if (x == 0) {
+    			var y = 0;
 
-                if (numArr[y] == randomArr[y + 1] || numArr[y] == randomArr[numArr.length - 1]) {
+    			if (numArr[y] == randomArr[y + 1] || numArr[y] == randomArr[numArr.length - 1]) {
 
-                    result[x] = 'V';
-                }
+    				result[x] = 'V';
+    			}
 
 
-            }
+    		}
 
-            if (x == numArr.length - 1) {
-                var y = numArr.length - 1;
+    		if (x == numArr.length - 1) {
+    			var y = numArr.length - 1;
 
-                if (numArr[y] == randomArr[y - 1] || numArr[y] == randomArr[0]) {
+    			if (numArr[y] == randomArr[y - 1] || numArr[y] == randomArr[0]) {
 
-                    result[x] = 'V';
-                }
+    				result[x] = 'V';
+    			}
 
-            }
+    		}
 
-            if (x != numArr.length-1 && x != 0) {
-                var y = x;
+    		if (x != numArr.length-1 && x != 0) {
+    			var y = x;
+    			console.log('x='+x);
+    			
 
-                if (numArr[y] == randomArr[y+1] || numArr[y] == randomArr[y-1]) {
-                  //  console.log('comparison ' + randomArr[y+1])
+    			if (numArr[y] == randomArr[y-1] || numArr[y] == randomArr[y+1]) {
+                    //console.log('comparison y+1=' + randomArr[y+1] + ' comparison y-1= ' + randomArr[y-1])
                     // bug here
 
                     result[y] = 'V';
-                }
 
-            }
+                } 
+               
+
+            } 
 
 
         }
