@@ -110,9 +110,18 @@
     			//console.log(numArr[y-1] + ' ' + numArr[y]  + ' ' + numArr[Number(y)+1]);
     			 			
 
-    			if (numArr[y] == randomArr[y-1] || numArr[y] == randomArr[Number(y)+1] && numArr[y] != numArr[y-1] && numArr[y] != numArr[Number(y)+1] ) {
+    			if (numArr[y] == randomArr[y-1] || numArr[y] == randomArr[Number(y)+1]) {
+
+    				if (numArr[y] -= numArr[y-1] || numArr[y] == numArr[Number(y)+1]) { 
+
+    					result[x] = 'X'; 
+    				}
+    				else { 
+
+    					result[x] = 'V'; 
+    				}
                    
-                    result[x] = 'V';
+                    
 
                 } 
                
