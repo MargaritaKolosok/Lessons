@@ -9,6 +9,8 @@
 <p id="demo">Nothing</p>
 <button onclick="showItem()">Click!</button>
 
+<p id='screenWidth'>'</p>
+
 <script>
 var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -23,6 +25,8 @@ x+=txt.charAt(i);
 
 return document.getElementById("demo").innerHTML = x;
 }
+
+document.getElementById('screenWidth').innerHTML = screen.availWidth + ' ' + window.location.href + "Page path name is " + window.location.pathname + "The URL port number of the current page is: " + window.location.port;
 
 // changes hkjfdhaskfjhdskjhsjhfkjsahdkskfdh
 
