@@ -3,18 +3,38 @@ var By = webdriver.By;
 
 var driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
 
-var page = driver.get('https://vb-web-qas.azurewebsites.net/#/login');
+driver.get('https://vb-web-qas.azurewebsites.net/#/login').then(function(){
+    driver.findElement(By.id('email')).then(function(email){
+        email.click();
+        email.sendKeys('rita.kolosok@gmail.com');
+        var password = driver.findElement(By.id('password'));
+        password.click();
+        password.sendKeys('passsssssssssss');
 
-driver.wait(function() {
-    return page.then(function() {
-        return driver.findElement(By.name('email')).isDisplayed();
+        var login = driver.findElement(By.css('.default vb-band-button'));
+        login.click();
     });
-}, 15000);
+});
 
-var name = driver.findElement(By.name('email'));
 
-name.click();
-name.sendKeys('Rita');
+
+
+
+
+
+/*driver.get('https://vb-web-qas.azurewebsites.net/#/login');
+
+    var email = driver.findElement(By.id('email'));
+
+driver.sleep(5000);
+
+email.click();
+email.sendKeys('Rita');
+*/
+
+
+
+
 
 
 
