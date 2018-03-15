@@ -1,0 +1,7 @@
+C:\git\Lessons\c#\variables\variables\bin\Debug\variables.exe.config
+C:\git\Lessons\c#\variables\variables\bin\Debug\variables.exe
+C:\git\Lessons\c#\variables\variables\bin\Debug\variables.pdb
+C:\git\Lessons\c#\variables\variables\obj\Debug\variables.csprojResolveAssemblyReference.cache
+C:\git\Lessons\c#\variables\variables\obj\Debug\variables.csproj.CoreCompileInputs.cache
+C:\git\Lessons\c#\variables\variables\obj\Debug\variables.exe
+C:\git\Lessons\c#\variables\variables\obj\Debug\variables.pdb
