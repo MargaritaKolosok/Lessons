@@ -1,0 +1,7 @@
+C:\git\Lessons\c#\hello\hello\bin\Debug\hello.exe.config
+C:\git\Lessons\c#\hello\hello\bin\Debug\hello.exe
+C:\git\Lessons\c#\hello\hello\bin\Debug\hello.pdb
+C:\git\Lessons\c#\hello\hello\obj\Debug\hello.csprojResolveAssemblyReference.cache
+C:\git\Lessons\c#\hello\hello\obj\Debug\hello.csproj.CoreCompileInputs.cache
+C:\git\Lessons\c#\hello\hello\obj\Debug\hello.exe
+C:\git\Lessons\c#\hello\hello\obj\Debug\hello.pdb
