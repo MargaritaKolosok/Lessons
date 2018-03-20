@@ -15,20 +15,27 @@ namespace hello
 
             Console.WriteLine("How long have you been sleep last night?");
 
-            int hoursOfSleep = int.Parse(Console.ReadLine());
+            string sleepValue = Console.ReadLine();
+            int hoursOfSleep;
 
+            if (int.TryParse(sleepValue, out hoursOfSleep)) {
+                
+                Console.WriteLine("Hello " + name);
+                if (hoursOfSleep >= 8)
+                {
 
-
-            Console.WriteLine("Hello " + name);
-            if (hoursOfSleep >= 8)
-            {
-
-                Console.WriteLine("You are well rested");
+                    Console.WriteLine("You are well rested");
+                }
+                else
+                {
+                    Console.WriteLine("You need more sleep");
+                }
+            } else {
+                
+                Console.WriteLine("The value is Not a number");
+                
             }
-            else {
-                Console.WriteLine("You need more sleep");
-            }
-            
+
             Console.ReadKey();
         }
     }
