@@ -4,7 +4,7 @@ var By = webdriver.By;
 var driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
 
 driver.get('https://vb-web-qas.azurewebsites.net/#/login').then(function(){
-    driver.findElement(By.id('email')).then(function(email){
+    driver.wait(until.elementLocated(By.id('email')).then(function(email){
         email.click();
         email.sendKeys('rita.kolosok@gmail.com');
         var password = driver.findElement(By.id('password'));
@@ -13,7 +13,7 @@ driver.get('https://vb-web-qas.azurewebsites.net/#/login').then(function(){
 
         var login = driver.findElement(By.css('.default vb-band-button'));
         login.click();
-    });
+    }));
 });
 
 
