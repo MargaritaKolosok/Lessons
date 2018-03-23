@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'>worrd</div>
+<input type='text' id='text'>
+<button onclick='check()'>Check!</button
+
+	
+
+<!-- Scripts -->
+<script>
+
+
+
+function check(){
+
+var text = document.getElementById('text').value;
+var message = document.getElementById('demo');
+
+message.innerHTML = duplicated(text);
+
+
+
+}
+
+function duplicated(word){
+var y = 1;
+var result = '';
+for(var i = 0 in word){
+
+if(word.includes(word.charAt(i), y)){
+//console.log('duplicated'+ i); 
+result += 'D';
+} else {
+//console.log('single'+ i)}
+result += 'S';
+
+}
+y++;
+}
+
+return result;
+}
+	
+</script>
+
+
+</body>
+</html>
+
