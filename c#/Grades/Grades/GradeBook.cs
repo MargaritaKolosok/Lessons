@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    class GradeBook
+    public class GradeBook
     {
 
         public GradeBook()
@@ -23,7 +23,7 @@ namespace Grades
             foreach (float grade in grades)
             {
                
-                    stats.HighestGrade = Math.Max(grade, stats.HighestGrade);
+                stats.HighestGrade = Math.Max(grade, stats.HighestGrade);
                 stats.LowestGrade = Math.Min(grade, stats.LowestGrade);
                
 
@@ -43,6 +43,6 @@ namespace Grades
             grades.Add(grade);
         }
 
-        List<float> grades;
+        private List<float> grades;
     }
 }

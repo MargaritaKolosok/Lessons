@@ -16,6 +16,7 @@ namespace Grades
 
 
            GradeStatistics stats =  book.ComputeStatistics();
+
             Console.WriteLine(stats.AverageGrade);
             Console.WriteLine(stats.HighestGrade);
             Console.WriteLine(stats.LowestGrade);
