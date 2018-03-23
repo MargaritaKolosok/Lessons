@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'>wqqrtordd</div>
+<div id='text'></div>
+	
+
+<!-- Scripts -->
+<script>
+
+    var demo = document.getElementById('demo').innerHTML;
+    var text = document.getElementById('text');
+
+    var i = 0, j=0;
+    result = [];
+    var a, b;
+
+    for(i=0; i<demo.length; i++){
+         a = demo.charAt(i);
+        for(j=0; j<demo.length; j++){
+             b = demo.charAt(j);
+         if(a == b && i!=j){
+            result[i] = 'D';
+             console.log('dup' + i);
+         }
+        }
+    }
+    text.innerHTML = result;
+	
+</script>
+
+
+</body>
+</html>
+
