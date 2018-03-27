@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'></div>
+<input type="text" name="" id='num'>
+<button onclick='toBinary()'>Get binary!</button>
+
+	
+
+<!-- Scripts -->
+<script>
+
+	function toBinary(){
+
+	var num = document.getElementById('num').value;
+
+	var result = parseInt(num, 2);
+
+	if (!isNaN(result)){
+
+		document.getElementById('demo').innerHTML = result;
+
+	} else {
+		document.getElementById('demo').innerHTML = 'Input is not a binary number';
+	}
+
+	
+	}
+
+	
+	
+</script>
+
+
+</body>
+</html>
+
