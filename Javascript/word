@@ -1,0 +1,20 @@
+function duplicateEncode(word){
+    var arr = []; var i = 0;
+    for(i in word){
+    // arr[i] = word.charAt(i);
+    if(word.search(word.charAt(i))>-1){
+    word.charAt(i) = '(';
+    } else {
+    word.charAt(i) = ')';
+    }
+    
+     
+    }
+    
+    
+    
+    // ...
+}
+
+
+duplicateEncode('word');
