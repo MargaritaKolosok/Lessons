@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'></div>
+
+	
+
+<!-- Scripts -->
+<script>
+
+	var walk = ['n','s','n','s','n','s','n','s','n','s']; // true result
+// var walk = ['n','n','n','s','n','s','n','s','n','s']; // false result
+
+	var n = 0, s = 0, e = 0, w= 0;
+
+	//checkBack();
+
+	isValidWalk(walk);
+
+
+	function isValidWalk(walk){
+
+		if(walk.length != 10){
+
+			console.log('less then 10')
+
+		} else if (walk.length == 10) {
+
+			console.log('length is 10');
+
+			if (checkBack()){
+
+				console.log('Person is back')
+
+			} else {
+
+				console.log('Person is LOST')
+
+			}
+
+
+		}
+
+	}
+
+	function checkBack(){
+
+		var n = 0, s = 0, e = 0, w= 0;
+
+		for (var i=0; i<walk.length; i++) {
+
+			if (walk[i]=='n') {
+
+				n++;
+
+			}
+			if (walk[i]=='s') {
+
+				s++;
+
+			}
+			if (walk[i]=='e') {
+
+				e++;
+
+			}
+			if (walk[i]=='w') {
+
+				w++;
+
+			}
+
+		}
+
+		var result = n + s + e + w;
+		console.log(result);
+
+		if (result == 10 && n == s && w == e) {
+
+			return true;
+
+		} else {
+
+			return false;
+
+		}
+
+		
+
+	}
+	
+</script>
+
+
+</body>
+</html>
+
