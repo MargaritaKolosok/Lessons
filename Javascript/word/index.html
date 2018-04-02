@@ -34,10 +34,10 @@ message.innerHTML = duplicated(text);
 
 function duplicated(word){
 var y = 1;
-var result = '';
+var result = [];
 for(var i = 0 in word){
-
-if(word.includes(word.charAt(i), y)){
+/*
+if(word.search(word.charAt(i))>){
 //console.log('duplicated'+ i); 
 result += 'D';
 } else {
@@ -46,6 +46,19 @@ result += 'S';
 
 }
 y++;
+
+*/
+for(var j=0 in word){
+if(word.includes(word.charAt(i)) && j!=i){
+//console.log('duplicated'+ i); 
+result[i] = 'D';
+} else if(word.includes(word.charAt(i)) && i==j) {
+//console.log('single'+ i)}
+result[i] = 'S';
+
+}
+}
+
 }
 
 return result;
