@@ -44,6 +44,15 @@ result[i]=arr2[j];
 }
 console.log(result);
 };
+
+function myFunction(a) {
+        var b = 6;
+        return function(b) {
+              console.log(b, a)
+        }
+}
+var testFunction = myFunction(2)
+testFunction(3)
 	
 </script>
 
