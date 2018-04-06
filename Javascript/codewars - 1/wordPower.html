@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'></div>
+
+	
+
+<!-- Scripts -->
+<script>
+
+	var inputString = "aabaa";
+
+	checkPalindrome(inputString);
+
+
+	function checkPalindrome(inputString) {
+    
+    var str1 = inputString;
+    var arr = []; var str2 = []; var result = '';
+    
+    for(var i=0 in str1){
+        
+        arr[i] = str1.charAt(i);
+        
+    }
+
+     
+         for(var i=0; i<str1.length; i++){
+        
+        str2[i] = arr.pop();
+      
+        
+        }
+
+        console.log(str2.length);
+
+        result = str2.toString();
+
+ 
+
+    str1 = str1.split("");
+
+ 
+   console.log(result + ' ' + str1);
+    
+    if(str1==result){
+
+    //	console.log('true');
+    	return true;
+       
+       } else {
+
+   // 	console.log('false');
+    	
+      	return false;
+       }
+    
+    
+    
+
+}
+
+</script>
+
+
+</body>
+</html>
+
