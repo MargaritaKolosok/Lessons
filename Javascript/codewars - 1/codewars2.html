@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'></div>
+
+	
+
+<!-- Scripts -->
+<script>
+
+	var str = "hello world lala land"; var x = ' '; var result = '';
+
+	camelCase(str);
+
+
+	function camelCase(str) {
+
+		var arr = []; var result = '';
+		arr = str.split(' ');
+
+		//console.log(arr);
+
+		for(var i=0; i<arr.length; i++){
+
+
+
+			var x = arr[i];
+			x = x.toString();
+
+			for(var j=0; j<x.length; j++){
+
+				if(j==0){
+
+					x = x.charAt(0).toUpperCase();
+
+				}
+
+			}
+
+
+			arr[i] = x;
+
+
+			console.log(arr[i]);
+			//arr[i] = x.chartAt(0);
+
+			//console.log(arr[i]);
+
+			result = result.concat(arr[i]);
+			console.log(result);
+
+
+
+
+
+		}
+
+		//result = result.concat(arr[i].);
+
+			
+
+
+	}
+	
+</script>
+
+
+</body>
+</html>
+
