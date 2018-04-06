@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'></div>
+
+	
+
+<!-- Scripts -->
+<script>
+
+	var num = 999;
+
+	persistence(num);
+
+	function persistence(num) {
+
+		num = num.toString();
+		var r=1;
+
+			
+
+		while(num.length!=1){
+
+			for(var i=0; i< num.length; i++){
+
+			r = r * parseInt(num.charAt(i));
+			
+
+		}
+
+		num = r.toString();
+		console.log(num);
+		r =1;
+		
+
+		}
+
+	
+	}
+	
+</script>
+
+
+</body>
+</html>
+
