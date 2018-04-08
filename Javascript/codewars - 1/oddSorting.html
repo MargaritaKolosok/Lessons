@@ -22,30 +22,39 @@
 
     function sortArray(array) {
         // Return a sorted array.
-        var arr1 = array;
+        var arr1 = array; var y =0;
         var result = [];
+
         console.log(arr1);
         var arr2 = [];
+
         for(var i=0; i<arr1.length; i++){
             if(arr1[i]%2>0 && arr1[i]!=0){
 
                 arr2[i] = arr1[i];
-                console.log(arr2)
+                console.log(arr2);
 
             }
         }
-        arr2.sort(function(a,b){return a-b;}); // wrong sorting
+
+        arr2.sort(function (a,b) {
+            return a-b;
+
+        });
         console.log(arr2);
-        result = arr1;
+
+
 
         for(var i=0; i<arr1.length; i++){
             if(arr1[i]%2==0){
                 result[i] = arr1[i];
             } else {
-                result[i] = arr2[i];
+                result[i] = arr2[y];
+                y++;
             }
         }
         console.log(result);
+        return result;
     }
 	
 </script>
