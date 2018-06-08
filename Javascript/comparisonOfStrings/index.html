@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Styles -->
+<style type="text/css">
+	
+</style>
+
+<script src="js/index.js"></script>
+<body>
+<!-- HTML DON-->
+
+<div id='demo'></div>
+
+	
+
+<!-- Scripts -->
+<script>
+
+function checkPalindrome(inputString) {
+    var compareStr = []; var i; 
+	var original = [];
+	
+	var arr = inputString.split('');
+	console.log(arr);
+	original = arr;
+	console.log(original);
+	
+	
+	for(var i=0; i<inputString.length; i++){
+	compareStr[i] = original.pop();
+	}
+	
+	console.log(compareStr);
+	
+	//arr.toString();
+	compareStr.toString();
+	
+	//console.log(arr);
+	//console.log(compareStr);
+	
+	
+	if(inputString == compareStr){
+	console.log(inputString + ' ' + compareStr + ' true');
+	return true;
+	} else {
+	console.log(inputString + ' ' + compareStr + ' false');
+	return false;
+	}
+	
+   
+
+}
+
+
+checkPalindrome('aabbbbaa');
+
+	
+</script>
+
+
+</body>
+</html>
+
